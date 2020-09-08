@@ -338,7 +338,10 @@ curl -X DELETE \
 ```
 Regra: não permite deletar caso a brand esteja relecionada a tabela patrimony.
 
+Quais evoluções poderiam ter:
 
+- Testes de integração
+- Dockerizar o app, para poder executar a dentro de um orquestrador de containeres
 
 
 
