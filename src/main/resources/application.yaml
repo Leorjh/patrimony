@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 5
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/patrimony
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show_sql: true
