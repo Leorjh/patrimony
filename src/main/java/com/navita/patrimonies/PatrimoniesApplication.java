@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAutoConfiguration
 public class PatrimoniesApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PatrimoniesApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PatrimoniesApplication.class, args);
+    }
 }

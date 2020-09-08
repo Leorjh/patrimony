@@ -21,35 +21,35 @@ import java.util.Optional;
 
 public class LoginFilter extends AbstractAuthenticationProcessingFilter {
 
-	private final UserRepository userRepository;
+    private final UserRepository userRepository;
 
-	public LoginFilter(String url, AuthenticationManager authManager, UserRepository userRepository) {
-		super(new AntPathRequestMatcher(url));
-		setAuthenticationManager(authManager);
-		this.userRepository = userRepository;
-	}
+    public LoginFilter(String url, AuthenticationManager authManager, UserRepository userRepository) {
+        super(new AntPathRequestMatcher(url));
+        setAuthenticationManager(authManager);
+        this.userRepository = userRepository;
+    }
 
-	@Override
-	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
-			throws AuthenticationException, IOException, ServletException {
-		CredentialsDTO credentials = new Gson().fromJson( request.getReader(), CredentialsDTO.class );
+    @Override
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+            throws AuthenticationException, IOException, ServletException {
+        CredentialsDTO credentials = new Gson().fromJson(request.getReader(), CredentialsDTO.class);
 
-		return getAuthenticationManager().authenticate(
-				new UsernamePasswordAuthenticationToken(
-						credentials.getLogin(), credentials.getPassword(), Collections.emptyList()
-				)
-		);
-	}
+        return getAuthenticationManager().authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        credentials.getLogin(), credentials.getPassword(), Collections.emptyList()
+                )
+        );
+    }
 
-	@Override
-	protected void successfulAuthentication(
-			HttpServletRequest request,
-			HttpServletResponse response,
-			FilterChain filterChain,
-			Authentication auth) throws IOException, ServletException {
-		//User is always present in successful authentication scenarios
-		Optional<User> o = userRepository.findByLogin( auth.getName() );
-		o.ifPresent( u ->  AuthenticationService.setHeaders(response, u));
-	}
+    @Override
+    protected void successfulAuthentication(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            FilterChain filterChain,
+            Authentication auth) throws IOException, ServletException {
+        //User is always present in successful authentication scenarios
+        Optional<User> o = userRepository.findByLogin(auth.getName());
+        o.ifPresent(u -> AuthenticationService.setHeaders(response, u));
+    }
 
 }

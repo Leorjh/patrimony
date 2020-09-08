@@ -10,11 +10,11 @@ import java.util.Optional;
 @Component
 public class SpringSecurityAuditorAware implements AuditorAware<User> {
 
-	@Autowired
-	private AuthenticatedUserRetrieval authenticatedUserRetrieval;
+    @Autowired
+    private AuthenticatedUserRetrieval authenticatedUserRetrieval;
 
-	@Override
-	public Optional<User> getCurrentAuditor() {
-		return Optional.ofNullable( authenticatedUserRetrieval.retrieve() );
-	}
+    @Override
+    public Optional<User> getCurrentAuditor() {
+        return Optional.ofNullable(authenticatedUserRetrieval.retrieve());
+    }
 }

@@ -1,6 +1,5 @@
 package com.navita.patrimonies.services;
 
-import com.navita.patrimonies.dtos.BrandDTO;
 import com.navita.patrimonies.dtos.PatrimonyDTO;
 import com.navita.patrimonies.entities.Brand;
 import com.navita.patrimonies.entities.Patrimony;
@@ -23,12 +22,12 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class PatrimonyServiceTest {
 
-    private static Long ID_PATRIMONY = 1L;
-    private static String NAME_PATRIMONY = "Computador";
-    private static String DESCRIPTION_PATRIMONY = "Computador Dell XPTO";
-    private static Long TOMBO_PATRIMONY = 2L;
-    private static Long ID_BRAND = 1L;
-    private static String NAME_BRAND = "Dell";
+    private static final Long ID_PATRIMONY = 1L;
+    private static final String NAME_PATRIMONY = "Computador";
+    private static final String DESCRIPTION_PATRIMONY = "Computador Dell XPTO";
+    private static final Long TOMBO_PATRIMONY = 2L;
+    private static final Long ID_BRAND = 1L;
+    private static final String NAME_BRAND = "Dell";
 
     @InjectMocks
     private PatrimonyService service;

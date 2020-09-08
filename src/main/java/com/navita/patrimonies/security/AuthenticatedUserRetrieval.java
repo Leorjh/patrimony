@@ -9,15 +9,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthenticatedUserRetrieval {
 
-	@Autowired
-	private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-	public User retrieve(){
-		String userId = getUserId();
-		return userRepository.findByLogin( userId ).orElse( null );
-	}
+    public User retrieve() {
+        String userId = getUserId();
+        return userRepository.findByLogin(userId).orElse(null);
+    }
 
-	private String getUserId() {
-		return SecurityContextHolder.getContext().getAuthentication().getName();
-	}
+    private String getUserId() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
 }

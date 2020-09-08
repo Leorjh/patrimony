@@ -2,9 +2,7 @@ package com.navita.patrimonies.services;
 
 import com.navita.patrimonies.dtos.BrandDTO;
 import com.navita.patrimonies.entities.Brand;
-import com.navita.patrimonies.entities.Patrimony;
 import com.navita.patrimonies.respositories.BrandRepository;
-import com.navita.patrimonies.respositories.PatrimonyRepository;
 import javassist.NotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,8 +20,8 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class BrandServiceTest {
 
-    private static Long ID_BRAND = 1L;
-    private static String NAME_BRAND = "Dell";
+    private static final Long ID_BRAND = 1L;
+    private static final String NAME_BRAND = "Dell";
 
     @InjectMocks
     private BrandService service;

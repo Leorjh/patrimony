@@ -1,7 +1,6 @@
 package com.navita.patrimonies.controllers;
 
 import com.navita.patrimonies.dtos.BrandDTO;
-import com.navita.patrimonies.dtos.PatrimonyDTO;
 import com.navita.patrimonies.entities.Brand;
 import com.navita.patrimonies.services.BrandService;
 import javassist.NotFoundException;
@@ -39,7 +38,7 @@ public class BrandController {
 
     @ResponseStatus(code = HttpStatus.OK)
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id") Long id){
+    public void deleteById(@PathVariable("id") Long id) {
         brandService.deleteById(id);
     }
 

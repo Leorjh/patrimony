@@ -1,15 +1,8 @@
 package com.navita.patrimonies.services;
 
-import com.navita.patrimonies.dtos.BrandDTO;
-import com.navita.patrimonies.dtos.PatrimonyDTO;
 import com.navita.patrimonies.dtos.UserDTO;
-import com.navita.patrimonies.entities.Brand;
-import com.navita.patrimonies.entities.Patrimony;
 import com.navita.patrimonies.entities.User;
-import com.navita.patrimonies.respositories.BrandRepository;
-import com.navita.patrimonies.respositories.PatrimonyRepository;
 import com.navita.patrimonies.respositories.UserRepository;
-import com.sun.istack.NotNull;
 import javassist.NotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,8 +11,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,10 +22,10 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceTest {
 
-    private static Long ID_USER = 1L;
-    private static String LOGIN_USER = "teste@gmail.com";
-    private static String NAME_USER = "Teste usuario";
-    private static String PASSWORD_USER = "Userpassword";
+    private static final Long ID_USER = 1L;
+    private static final String LOGIN_USER = "teste@gmail.com";
+    private static final String NAME_USER = "Teste usuario";
+    private static final String PASSWORD_USER = "Userpassword";
 
     @InjectMocks
     private UserService service;

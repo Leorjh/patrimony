@@ -1,7 +1,6 @@
 package com.navita.patrimonies.services;
 
 import com.navita.patrimonies.dtos.BrandDTO;
-import com.navita.patrimonies.entities.Brand;
 import com.navita.patrimonies.respositories.BrandRepository;
 import javassist.NotFoundException;
 import org.junit.Before;
@@ -23,7 +22,7 @@ public class BrandTest {
     @Mock
     private BrandRepository brandRepository;
 
-    private static long uuid = 1L;
+    private static final long uuid = 1L;
 
     @Before
     public void setUp() throws Exception {
@@ -31,7 +30,7 @@ public class BrandTest {
     }
 
     @Test
-    public void persistTestSuccess(){
+    public void persistTestSuccess() {
         BrandDTO brandDTO = BrandDTO.builder()
                 .name("Teste")
                 .brandId(uuid)
@@ -44,6 +43,6 @@ public class BrandTest {
     public void findByIdReturnOne() throws ParseException, NotFoundException {
         Long id = uuid;
         //Brand brand = buildBrand ( uuid );
-        BrandService brandService = Mockito.mock( BrandService.class );
+        BrandService brandService = Mockito.mock(BrandService.class);
     }
 }

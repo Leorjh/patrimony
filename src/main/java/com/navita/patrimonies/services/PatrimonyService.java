@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class PatrimonyService {
 
     @Autowired
-    private PatrimonyRepository patrimonyRepository;
+    private final PatrimonyRepository patrimonyRepository;
 
     public PatrimonyDTO persist(PatrimonyDTO patrimonyDTO) {
         var patrimony = PatrimonyDTO.toEntity(patrimonyDTO);
@@ -27,16 +27,16 @@ public class PatrimonyService {
         return patrimonyRepository.findAll()
                 .stream()
                 .map(PatrimonyDTO::toDto)
-                .collect( Collectors.toList() );
+                .collect(Collectors.toList());
     }
 
     public PatrimonyDTO findById(Long id) throws NotFoundException {
         return patrimonyRepository.findById(id)
                 .map(PatrimonyDTO::toDto)
-                .orElseThrow(() -> new NotFoundException( "No Patrimony found for id " + id ));
+                .orElseThrow(() -> new NotFoundException("No Patrimony found for id " + id));
     }
 
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         patrimonyRepository.deleteById(id);
     }
 }

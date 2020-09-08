@@ -1,9 +1,6 @@
 package com.navita.patrimonies.controllers;
 
-import com.navita.patrimonies.dtos.BrandDTO;
 import com.navita.patrimonies.dtos.PatrimonyDTO;
-import com.navita.patrimonies.entities.Brand;
-import com.navita.patrimonies.entities.Patrimony;
 import com.navita.patrimonies.services.PatrimonyService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +36,7 @@ public class PatrimonyController {
 
     @ResponseStatus(code = HttpStatus.OK)
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id") Long id){
+    public void deleteById(@PathVariable("id") Long id) {
         patrimonyService.deleteById(id);
     }
 
