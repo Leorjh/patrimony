@@ -25,7 +25,7 @@ Primeiro se deve criar o usuário.
 
 Comando cURL de exemplo para criação de usuário:
 
-`` curl
+``
 curl -X POST \
   http://localhost:8080/user \
   -H 'cache-control: no-cache' \
@@ -72,7 +72,7 @@ Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOb21lIGRvIFVzdWFyaW8iLCJ1c2VyTmFtZSI6Ik5v
 
 Esse token será usado para as próximas requisições.
 
-###POST
+### POST
 - Brand
 
 http://localhost:8080/brands
@@ -131,7 +131,7 @@ JSON:
 
 Necessário informar o X-Authorization com o token gerado para efetuar os gets.
 
-###GET
+### GET
 - User
 
 http://localhost:8080/user
@@ -222,7 +222,7 @@ curl -X GET \
   -H 'x-authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOb21lIGRvIFVzdWFyaW8iLCJ1c2VyTmFtZSI6Ik5vbWUgZG8gVXN1YXJpbyIsInVzZXJMb2dpbiI6ImVtYWlsQGdtYWlsLmNvbSIsImV4cCI6MTYwMjA5ODA5MH0.cutRr4beoFdxDjAuDAZv8f2cJeF44099wsmxT_NgYaqfg415WiZUaPVOfCn1Nwfx2NImT65Lj5NlJ7l05nKbIQ'
 ```
 
-###PUT
+### PUT
 - Patrimony
 
 http://localhost:8080/patrimony/38
@@ -288,7 +288,7 @@ JSON:
 
 Necessário informar o X-Authorization com o token gerado para efetuar os deletes.
 
-###DELETE
+### DELETE
 - User
 
 Exemplo deletando usuário de id 2:
